@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  docker.webhook.deploy:
+    image: docker.webhook.deploy
+    build:
+      context: .
+      dockerfile: docker.webhook.deploy/Dockerfile
