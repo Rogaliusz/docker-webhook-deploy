@@ -22,7 +22,8 @@ namespace Docker.Webhook.Deploy.Controllers
         public async Task<IActionResult> Deploy(DockerQuery dockerQuery)
         {
             await _dockerService.LoginAsync(_credentialsSettings.Login, _credentialsSettings.Password);
-            return Ok();
+            var response = await _dockerService.UpdateImageAsync(dockerQuery.DockerRepository, dockerQuery.DockerContainerName);
+            return Ok(response);
         }
     }
 }

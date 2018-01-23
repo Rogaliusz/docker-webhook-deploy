@@ -9,15 +9,9 @@ namespace Docker.Webhook.Deploy.Models
     public class DockerQuery
     {
         [FromQuery]
-        public string DockerName { get; set; }
+        public string DockerContainerName { get; set; }
 
         [FromQuery]
-        public string DockerRepo { get; set; }
-
-        [FromQuery] 
-        public int FromPort { get; set; }
-
-        [FromQuery]
-        public int ToPort { get; set; }
+        public string DockerRepository { get; set; }
     }
 }

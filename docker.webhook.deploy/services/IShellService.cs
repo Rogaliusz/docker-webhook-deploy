@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 
 namespace Docker.Webhook.Deploy.Services
 {
-    interface IShellService
+    public interface IShellService
     {
         Task<string> RunBashCommandAsync(string command);
+
+        Task<string> RunBashScriptAsync(string script, string arguments);
     }
 }

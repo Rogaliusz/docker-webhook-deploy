@@ -9,6 +9,6 @@ namespace Docker.Webhook.Deploy.Services
     {
         Task LoginAsync(string login, string password);
 
-        Task<string> UpdateImageAsync(DockerService dockerService);
+        Task<string> UpdateImageAsync(string dockerRepository, string dockerContainerName);
     }
 }

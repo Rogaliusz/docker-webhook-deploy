@@ -4,14 +4,20 @@ namespace Docker.Webhook.Deploy.Services
 {
     public class DockerService : IDockerService, IService
     {
-        public Task LoginAsync(string login, string password)
+        private readonly IShellService _shellService;
+        public DockerService(IShellService shellService)
         {
-            throw new System.NotImplementedException();
+            _shellService = shellService;
         }
 
-        public Task<string> UpdateImageAsync(DockerService dockerService)
+        public async Task LoginAsync(string login, string password)
         {
-            throw new System.NotImplementedException();
+            await _shellService.RunBashScriptAsync("login", $"login password");
+        }
+
+        public async Task<string> UpdateImageAsync(string dockerRepository, string dockerContainerName)
+        {
+            return await _shellService.RunBashScriptAsync("update", $"{dockerRepository} {dockerContainerName}");
         }
     }
 }
