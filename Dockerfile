@@ -5,9 +5,10 @@ EXPOSE 808
 FROM microsoft/aspnetcore-build:2.0 AS build
 WORKDIR /src
 COPY *.sln ./
-COPY . .
+COPY Docker.Webhook.Deploy/Docker.Webhook.Deploy.csproj Docker.Webhook.Deploy
 RUN dotnet restore
-WORKDIR /src/docker.webhook.deploy
+COPY . .
+WORKDIR /src/Docker.Webhook.Deploy
 RUN dotnet build -c Release -o /app
 
 FROM build AS publish
