@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 using Autofac;
-using docker.webhook.deploy.services;
+using Docker.Webhook.Deploy.Services;
 
 namespace docker.webhook.deploy.ioc.modules
 {

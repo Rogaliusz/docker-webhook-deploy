@@ -4,14 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using docker.webhook.deploy.ioc;
+using Docker.Webhook.Deploy.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace docker.webhook.deploy
+namespace Docker.Webhook.Deploy
 {
     public class Startup
     {

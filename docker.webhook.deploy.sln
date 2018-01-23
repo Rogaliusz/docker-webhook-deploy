@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "docker.webhook.deploy", "docker.webhook.deploy\docker.webhook.deploy.csproj", "{0F44CA5D-4EB9-45FD-A963-71732164E6AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docker.Webhook.Deploy", "docker.webhook.deploy\Docker.Webhook.Deploy.csproj", "{0F44CA5D-4EB9-45FD-A963-71732164E6AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

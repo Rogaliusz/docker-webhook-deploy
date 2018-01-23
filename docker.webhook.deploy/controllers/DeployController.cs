@@ -1,11 +1,11 @@
 ﻿using System.Threading.Tasks;
-using docker.webhook.deploy.models;
-using docker.webhook.deploy.services;
+using Docker.Webhook.Deploy.Models;
+using Docker.Webhook.Deploy.Services;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace docker.webhook.deploy.controllers
+namespace Docker.Webhook.Deploy.Controllers
 {
     [Route("[controller]")]
     public class DeployController : Controller

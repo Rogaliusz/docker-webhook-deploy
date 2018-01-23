@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace docker.webhook.deploy
+namespace Docker.Webhook.Deploy
 {
     public class Program
     {

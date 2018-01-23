@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace docker.webhook.deploy.services
+namespace Docker.Webhook.Deploy.Services
 {
     public class ShellService : IShellService, IService
     {

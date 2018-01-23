@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace docker.webhook.deploy.services
+namespace Docker.Webhook.Deploy.Services
 {
     interface IShellService
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace docker.webhook.deploy.models
+namespace Docker.Webhook.Deploy.Models
 {
     public class DockerQuery
     {

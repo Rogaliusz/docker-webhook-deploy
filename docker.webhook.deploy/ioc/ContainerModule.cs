@@ -2,7 +2,7 @@
 using docker.webhook.deploy.ioc.modules;
 using Microsoft.Extensions.Configuration;
 
-namespace docker.webhook.deploy.ioc
+namespace Docker.Webhook.Deploy.IoC
 {
     public class ContainerModule : Autofac.Module
     {

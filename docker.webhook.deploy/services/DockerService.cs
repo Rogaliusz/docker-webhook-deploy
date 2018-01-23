@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace docker.webhook.deploy.services
+namespace Docker.Webhook.Deploy.Services
 {
     public class DockerService : IDockerService, IService
     {
