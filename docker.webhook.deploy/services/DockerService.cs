@@ -9,7 +9,7 @@ namespace docker.webhook.deploy.services
             throw new System.NotImplementedException();
         }
 
-        public Task UpdateImage(DockerService dockerService)
+        public Task<string> UpdateImageAsync(DockerService dockerService)
         {
             throw new System.NotImplementedException();
         }

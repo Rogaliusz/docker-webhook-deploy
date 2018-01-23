@@ -1,4 +1,5 @@
-﻿using docker.webhook.deploy.models;
+﻿using System.Threading.Tasks;
+using docker.webhook.deploy.models;
 using docker.webhook.deploy.services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,8 +16,9 @@ namespace docker.webhook.deploy.controllers
             _dockerService = dockerService;
         }
         [HttpGet]
-        public IActionResult Docker(DockerQuery dockerQuery)
+        public async Task<IActionResult> Deploy(DockerQuery dockerQuery)
         {
+
             return Ok();
         }
     }
