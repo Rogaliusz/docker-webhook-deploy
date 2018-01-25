@@ -15,13 +15,13 @@ namespace Docker.Webhook.Deploy.Services
 
         public async Task LoginAsync(string login, string password)
         {
-            var result = await _shellService.RunBashScriptAsync("login", $"login password");
+            var result = await _shellService.RunBashScriptAsync("Scripts/login.sh", $"login password");
             _logger.LogInformation($"Got result from login async {result}");
         }
 
         public async Task<string> UpdateImageAsync(string dockerRepository, string dockerContainerName)
         {
-            var result = await _shellService.RunBashScriptAsync("update", $"{dockerRepository} {dockerContainerName}");
+            var result = await _shellService.RunBashScriptAsync("Scripts/update.sh", $"{dockerRepository} {dockerContainerName}");
             _logger.LogInformation($"Got result from updateImage async {result}");
             return result;
         }
