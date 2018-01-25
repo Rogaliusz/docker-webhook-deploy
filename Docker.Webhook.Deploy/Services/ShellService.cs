@@ -29,24 +29,37 @@ namespace Docker.Webhook.Deploy.Services
 
         public async Task<string> RunBashScriptAsync(string script, string arguments)
         {
-            var escapedArgs = arguments.Replace("\"", "\\\"");
-            var scriptPath = Path.Combine("Scripts", $"{script}.sh");
+            ProcessStartInfo psi = new ProcessStartInfo();
+            psi.FileName = "sh";
+            psi.Arguments = $"-c \"{script} {arguments}\"";
+            psi.UseShellExecute = false;
+            psi.RedirectStandardOutput = true;
+            psi.RedirectStandardError = true;
 
-            var process = new Process()
+            var proc = new Process
             {
-                StartInfo = new ProcessStartInfo
-                {
-                    FileName = scriptPath,
-                    Arguments = $"-c \"{escapedArgs}\"",
-                    RedirectStandardOutput = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true,
-                }
+                StartInfo = psi
             };
-            process.Start();
-            var result = await process.StandardOutput.ReadToEndAsync();
-            process.WaitForExit();
-            return result;
+
+            proc.Start();
+
+            var error = string.Empty;
+            var output = string.Empty;
+
+            var list = new List<Task>()
+            {
+                proc.StandardError.ReadToEndAsync().ContinueWith( r => error = r.Result),
+                proc.StandardOutput.ReadToEndAsync().ContinueWith(r => output = r.Result)
+            };
+
+            await Task.WhenAll(list);
+
+            if (!string.IsNullOrEmpty(error))
+                return "error: " + error;
+
+            proc.WaitForExit();
+
+            return output;
         }
     }
 }
